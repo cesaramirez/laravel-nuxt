@@ -15,6 +15,29 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: { color: "#3B8070" },
+
+  modules: ["@nuxtjs/axios", "@nuxtjs/auth"],
+
+  axios: {
+    baseURL: "http://laravel.nuxt.test/api"
+  },
+
+  auth: {
+    endpoints: {
+      login: {
+        url: "login",
+        method: "post",
+        propertyName: "meta.token"
+      },
+      user: {
+        url: "login",
+        method: "get",
+        propertyName: "data"
+      },
+      logout: {}
+    }
+  },
+
   css: ["bulma", "@/assets/sass/app.scss"],
   /*
   ** Build configuration
