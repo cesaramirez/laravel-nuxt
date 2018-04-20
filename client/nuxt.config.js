@@ -27,6 +27,7 @@ module.exports = {
 
   modules: ["@nuxtjs/axios", "@nuxtjs/auth"],
 
+  plugins: ["./plugins/mixins/user"],
   axios: {
     baseURL: "http://laravel.nuxt.test/api"
   },
