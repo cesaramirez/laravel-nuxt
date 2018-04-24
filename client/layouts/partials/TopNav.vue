@@ -15,20 +15,45 @@
       <div id="navMenu" class="navbar-menu">
         <div class="navbar-end">
           <template v-if="!authenticated">
-            <a class="navbar-item" href="">
-              Sign In
-            </a>
             <nuxt-link class="navbar-item" :to="{ name: 'auth-login' }">
-              Sign Up
+              Sign In
             </nuxt-link>
+            <a class="navbar-item">
+              Sign Up
+            </a>
           </template>
           <template v-else>
-            <a class="navbar-item" href="">
-              {{ user.name }}
-            </a>
+            <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" v-text="user.name" />
+                    <div class="navbar-dropdown is-boxed">
+                        <a class="navbar-item">
+                            Dashboard
+                        </a>
+                        <a class="navbar-item">
+                            Profile
+                        </a>
+                        <a class="navbar-item">
+                            Settings
+                        </a>
+                        <hr class="navbar-divider">
+                        <a @click.prevent="logout" class="navbar-item">
+                            Logout
+                        </a>
+                    </div>
+                </div>
+
           </template>
         </div>
       </div>
     </div>
   </nav>
 </template>
+<script>
+export default {
+  methods: {
+    logout() {
+      this.$auth.logout();
+    }
+  }
+};
+</script>
