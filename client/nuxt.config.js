@@ -59,6 +59,10 @@ module.exports = {
             url: "auth/logout",
             method: "post"
           }
+        },
+        redirect: {
+          login: "/auth/login",
+          home: "/"
         }
       }
     }
