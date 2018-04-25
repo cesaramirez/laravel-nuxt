@@ -18,9 +18,9 @@
             <nuxt-link class="navbar-item" :to="{ name: 'auth-login' }">
               Sign In
             </nuxt-link>
-            <a class="navbar-item">
+            <nuxt-link class="navbar-item" :to="{ name: 'auth-register' }">
               Sign Up
-            </a>
+            </nuxt-link>
           </template>
           <template v-else>
             <div class="navbar-item has-dropdown is-hoverable">
