@@ -10,19 +10,23 @@
                 <div class="control">
                   <input
                     class="input is-large"
+                    :class="{ 'is-danger' : errors.email }"
                     type="email"
                     placeholder="Your Email"
                     autofocus
                     v-model="form.email">
+                    <p class="help is-danger" v-if="errors.email" v-text="errors.email[0]"></p>
                 </div>
               </div>
               <div class="field">
                 <div class="control">
                   <input
                     class="input is-large"
+                    :class="{ 'is-danger' : errors.password }"
                     type="password"
                     placeholder="Your Password"
                     v-model="form.password">
+                    <p class="help is-danger" v-if="errors.password" v-text="errors.password[0]"></p>
                 </div>
               </div>
               <button class="button is-block is-info is-large is-fullwidth">Login</button>
