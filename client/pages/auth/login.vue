@@ -56,7 +56,7 @@ export default {
       });
 
       this.$router.replace({
-        path: "/"
+        path: this.$route.query.redirec || "/"
       });
     }
   }
